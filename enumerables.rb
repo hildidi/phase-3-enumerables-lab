@@ -1,7 +1,7 @@
 require 'pry'
 
 # this method returns an array of hashes, which we'll use in the other methods
-def spicy_foods 
+def spicy_foods
   [
     { name: 'Green Curry', cuisine: 'Thai', heat_level: 9 },
     { name: 'Buffalo Wings', cuisine: 'American', heat_level: 3 },
@@ -12,13 +12,19 @@ end
 # given an array of spicy foods, **return an array of strings**
 # with the names of each spicy food
 def get_names(spicy_foods)
-  # your code here
+  
+  spicy_foods.each do |name|
+    puts "#{name}"
+  end
+
 end
 
 # given an array of spicy foods, **return an array of hashes** 
 # where the heat level of the food is greater than 5
 def spiciest_foods(spicy_foods)
   # your code here
+
+
 end
 
 # given an array of spicy foods, **output to the terminal**
@@ -33,7 +39,10 @@ end
 # given an array of spicy foods and a string representing a cuisine, **return a single hash**  
 # for the spicy food whose cuisine matches the cuisine being passed to the method
 def get_spicy_food_by_cuisine(spicy_foods, cuisine)
-  # your code here
+
+  foods = spicy_foods.find_all{|food| food [:cuisine] === cuisine}
+  foods[0]
+
 end
 
 # Given an array of spicy foods, **return an array of hashes** 
